@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39875aad-5e8f-42f3-8ccc-7c1ac5bda8b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSE332.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex0/ArrayQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex0/ArrayStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex0/BenchMark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex0/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex0/LinkedQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex0/LinkedStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex0/MyQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex0/MyStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex0/NaiveQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex0/NaiveStack.java" afterDir="false" />
+    <list default="true" id="39875aad-5e8f-42f3-8ccc-7c1ac5bda8b6" name="Changes" comment="Two stacks and two queues are implemented.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex0/ArrayQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex0/ArrayQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex0/ArrayStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex0/ArrayStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex0/BenchMark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex0/BenchMark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex0/LinkedQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex0/LinkedQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex0/LinkedStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex0/LinkedStack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +21,21 @@
     <branch-grouping />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;zongzewu23&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/zongzewu23/CSE332&quot;,
+    &quot;accountId&quot;: &quot;3037ec28-c3e1-4900-91a1-309463cb8019&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -40,35 +45,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Client.executor": "Run",
-    "Application.GFG.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/CSE332/CSE332/src/ex0",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BenchMark.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GFG.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/CSE332/CSE332/src/ex0&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\CSE332\CSE332\src\ex0" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.BenchMark">
+    <configuration name="BenchMark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ex0.BenchMark" />
+      <module name="CSE332" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ex0.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ex0.Client" />
       <module name="CSE332" />
@@ -97,6 +116,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BenchMark" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.GFG" />
       </list>
@@ -127,8 +147,18 @@
       <workItem from="1736302783522" duration="236000" />
       <workItem from="1736303042123" duration="225000" />
       <workItem from="1736303306522" duration="826000" />
-      <workItem from="1736304291461" duration="922000" />
+      <workItem from="1736304291461" duration="3660000" />
+      <workItem from="1736308012643" duration="5621000" />
     </task>
+    <task id="LOCAL-00001" summary="Two stacks and two queues are implemented.">
+      <option name="closed" value="true" />
+      <created>1736305592113</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736305592113</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,10 +169,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Two stacks and two queues are implemented." />
+    <option name="LAST_COMMIT_MESSAGE" value="Two stacks and two queues are implemented." />
   </component>
 </project>
