@@ -22,6 +22,7 @@ public class TopKHeap<T extends Comparable<T>> {
 
     /**
      * O(n) because of toList()
+     *
      * @return
      */
     // Returns a list containing exactly the
@@ -36,6 +37,7 @@ public class TopKHeap<T extends Comparable<T>> {
 
     /**
      * O(log n + log k) because rest.insert and topK.extract & insert
+     *
      * @param item
      */
     // Add the given item into the data structure.
@@ -43,7 +45,7 @@ public class TopKHeap<T extends Comparable<T>> {
     public void insert(T item) {
         if (topK.size() < k) {
             topK.insert(item);
-            itemToHeap.put(item,topK);
+            itemToHeap.put(item, topK);
         } else {
             T topKMin = topK.peek();
             if (item.compareTo(topKMin) > 0) {
@@ -75,6 +77,7 @@ public class TopKHeap<T extends Comparable<T>> {
 
     /**
      * O(log n + log k) because of rest.insert() & extract(), topK.insert() & extract()
+     *
      * @param item
      */
     // To be used whenever an item's priority has changed.
@@ -117,6 +120,7 @@ public class TopKHeap<T extends Comparable<T>> {
 
     /**
      * O(log n + log k) because rest.extract() and topK.insert()
+     *
      * @param item
      */
     // Removes the given item from the data structure

@@ -5,13 +5,14 @@ package ex2;
  * implementation is all the ">" or "<" in compareTo() "?" 0 are reversed to ">" or "<"
  * Other code are all the same
  */
+
 import java.lang.reflect.Array;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
-public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<T> {
+public class BinaryMaxHeap<T extends Comparable<T>> implements MyPriorityQueue<T> {
     private int size; // Maintains the size of the data structure
     private T[] arr; // The array containing all items in the data structure
     // index 0 must be utilized
@@ -29,6 +30,7 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
 
     /**
      * O(log n) because only swap with parent
+     *
      * @param i
      */
     // move the item at index i "rootward" until
@@ -45,7 +47,8 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
     }
 
     /**
-     *O(log n) because only swap with children
+     * O(log n) because only swap with children
+     *
      * @param i
      */
     // move the item at index i "leafward" until
@@ -92,6 +95,7 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
 
     /**
      * O(log n) because percolateUp is O(log n)
+     *
      * @param item
      */
     public void insert(T item) {
@@ -106,11 +110,12 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
 
     /**
      * O(log n) because percolateDown is O(log n)
+     *
      * @return
      */
     public T extract() {
         if (isEmpty()) {
-            throw new IllegalArgumentException("Nothing in the heap!");
+            throw new IllegalStateException("Nothing in the heap!");
         }
 
         T item = arr[0];
@@ -124,6 +129,7 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
 
     /**
      * O(log n) because of percolateDown
+     *
      * @param index
      * @return
      */
@@ -150,6 +156,7 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
 
     /**
      * O(log n) because either call the percolateUp or percolateDown
+     *
      * @param index
      */
     // Determine whether to percolate up/down
@@ -202,6 +209,9 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
     // We have provided a recommended implementation
     // You're welcome to do something different, though!
     public T peek() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Nothing in the Heap!s");
+        }
         return arr[0];
     }
 

@@ -24,6 +24,7 @@ public class BinaryMinHeap<T extends Comparable<T>> implements MyPriorityQueue<T
 
     /**
      * O(log n) because only swap with parent
+     *
      * @param i
      */
     // move the item at index i "rootward" until
@@ -43,7 +44,8 @@ public class BinaryMinHeap<T extends Comparable<T>> implements MyPriorityQueue<T
     }
 
     /**
-     *O(log n) because only swap with children
+     * O(log n) because only swap with children
+     *
      * @param i
      */
     // move the item at index i "leafward" until
@@ -92,6 +94,7 @@ public class BinaryMinHeap<T extends Comparable<T>> implements MyPriorityQueue<T
 
     /**
      * O(log n) because percolateUp is O(log n)
+     *
      * @param item
      */
     public void insert(T item) {
@@ -109,11 +112,12 @@ public class BinaryMinHeap<T extends Comparable<T>> implements MyPriorityQueue<T
 
     /**
      * O(log n) because percolateDown is O(log n)
+     *
      * @return
      */
     public T extract() {
         if (isEmpty()) {
-            throw new IllegalArgumentException("Nothing in the heap!");
+            throw new IllegalStateException("Nothing in the heap!");
         }
 
         T item = arr[0];
@@ -130,6 +134,7 @@ public class BinaryMinHeap<T extends Comparable<T>> implements MyPriorityQueue<T
 
     /**
      * O(log n) because of percolateDown
+     *
      * @param index
      * @return
      */
@@ -158,6 +163,7 @@ public class BinaryMinHeap<T extends Comparable<T>> implements MyPriorityQueue<T
 
     /**
      * O(log n) because either call the percolateUp or percolateDown
+     *
      * @param index
      */
     // Determine whether to percolate up/down
@@ -213,11 +219,15 @@ public class BinaryMinHeap<T extends Comparable<T>> implements MyPriorityQueue<T
     // We have provided a recommended implementation
     // You're welcome to do something different, though!
     public T peek() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Nothing in the Heap!s");
+        }
         return arr[0];
     }
 
     /**
      * O(n) because of copy array
+     *
      * @return
      */
     // We have provided a recommended implementation
