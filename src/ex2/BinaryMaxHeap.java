@@ -1,5 +1,10 @@
 package ex2;
-
+/*
+ * Comments in this file will be less than the BinaryMinHeap.java
+ * Because the only difference between this MaxHeap implementation and MinHeap
+ * implementation is all the ">" or "<" in compareTo() "?" 0 are reversed to ">" or "<"
+ * Other code are all the same
+ */
 import java.lang.reflect.Array;
 import java.util.Map;
 import java.util.HashMap;
@@ -22,6 +27,10 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
         itemToIndex = new HashMap<>();
     }
 
+    /**
+     * O(log n) because only swap with parent
+     * @param i
+     */
     // move the item at index i "rootward" until
     // the heap property holds
     private void percolateUp(int i) {
@@ -35,6 +44,10 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
         }
     }
 
+    /**
+     *O(log n) because only swap with children
+     * @param i
+     */
     // move the item at index i "leafward" until
     // the heap property holds
     private void percolateDown(int i) {
@@ -65,6 +78,9 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
         }
     }
 
+    /**
+     * O(n) because copy array
+     */
     // copy all items into a larger array to make more room.
     private void resize() {
         T[] larger = (T[]) Array.newInstance(Comparable.class, arr.length * 2);
@@ -74,6 +90,10 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
         arr = larger;
     }
 
+    /**
+     * O(log n) because percolateUp is O(log n)
+     * @param item
+     */
     public void insert(T item) {
         if (size == arr.length - 1) {
             resize();
@@ -84,7 +104,10 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
         size++;
     }
 
-
+    /**
+     * O(log n) because percolateDown is O(log n)
+     * @return
+     */
     public T extract() {
         if (isEmpty()) {
             throw new IllegalArgumentException("Nothing in the heap!");
@@ -99,6 +122,11 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
         return item;
     }
 
+    /**
+     * O(log n) because of percolateDown
+     * @param index
+     * @return
+     */
     // Remove the item at the given index.
     // Make sure to maintain the heap property!
     private T remove(int index) {
@@ -120,6 +148,10 @@ public class BinaryMaxHeap <T extends Comparable<T>> implements MyPriorityQueue<
         remove(itemToIndex.get(item));
     }
 
+    /**
+     * O(log n) because either call the percolateUp or percolateDown
+     * @param index
+     */
     // Determine whether to percolate up/down
     // the item at the given index, then do it!
     private void updatePriority(int index) {

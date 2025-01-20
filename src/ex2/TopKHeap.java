@@ -20,6 +20,10 @@ public class TopKHeap<T extends Comparable<T>> {
         itemToHeap = new HashMap<>();
     }
 
+    /**
+     * O(n) because of toList()
+     * @return
+     */
     // Returns a list containing exactly the
     // largest k items. The list is not necessarily
     // sorted. If the size is less than or equal to
@@ -30,11 +34,16 @@ public class TopKHeap<T extends Comparable<T>> {
         return list;
     }
 
+    /**
+     * O(log n + log k) because rest.insert and topK.extract & insert
+     * @param item
+     */
     // Add the given item into the data structure.
     // The running time of this method should be O(log(n)+log(k)).
     public void insert(T item) {
         if (topK.size() < k) {
             topK.insert(item);
+            itemToHeap.put(item,topK);
         } else {
             T topKMin = topK.peek();
             if (item.compareTo(topKMin) > 0) {
@@ -64,6 +73,10 @@ public class TopKHeap<T extends Comparable<T>> {
         return itemToHeap.get(item) == topK;
     }
 
+    /**
+     * O(log n + log k) because of rest.insert() & extract(), topK.insert() & extract()
+     * @param item
+     */
     // To be used whenever an item's priority has changed.
     // The input is a reference to the items whose priority
     // has changed. This operation will then rearrange
@@ -77,28 +90,35 @@ public class TopKHeap<T extends Comparable<T>> {
             throw new IllegalArgumentException("Given item is not present in the priority queue!");
         }
         if (rest.isEmpty()) {
-            // nothing in the rest, all ppl topK, update inside topk
+            // nothing in the rest, all ppl topK, update inside topK
             topK.updatePriority(item);
             return;
         }
-        // topl full, rest contains some ppl
+        // maintain the heap for both rest and topK, for compare each other in the next if statment
         if (itemToHeap.get(item) == topK) {
             topK.updatePriority(item);
         } else {
             rest.updatePriority(item);
         }
+        // need to rebalance the rest and topK
         if (topK.peek().compareTo(rest.peek()) < 0) {
+            // extract because need to swap element anyway
             T restMax = rest.extract();
             T topKMin = topK.extract();
 
+            // insert the biggest element in rest to topK
             topK.insert(restMax);
             itemToHeap.put(restMax, topK);
-
+            // insert the smallest element in topK to rest
             rest.insert(topKMin);
             itemToHeap.put(topKMin, rest);
         }
     }
 
+    /**
+     * O(log n + log k) because rest.extract() and topK.insert()
+     * @param item
+     */
     // Removes the given item from the data structure
     // throws an IllegalArgumentException if the item
     // is not present.
@@ -107,13 +127,18 @@ public class TopKHeap<T extends Comparable<T>> {
         if (!itemToHeap.containsKey(item)) {
             throw new IllegalArgumentException("Given item is not present in the priority queue!");
         }
+        // remove item from rest does not impact topK
         if (itemToHeap.get(item) == rest) {
             rest.remove(item);
         } else {
+            // remove item from top k, then grab the root from MaxHeap to keep the number of k topK
             topK.remove(item);
-            T restMax = rest.extract();
-            topK.insert(restMax);
-            itemToHeap.put(restMax, topK);
+            // if rest is empty then topK increment one element, otherwise grab one element from rest
+            if (!rest.isEmpty()) {
+                T restMax = rest.extract();
+                topK.insert(restMax);
+                itemToHeap.put(restMax, topK);
+            }
         }
         size--;
     }
