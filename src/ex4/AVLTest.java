@@ -7,8 +7,8 @@ public class AVLTest {
     public static void main(String[] args) {
         AVLTree<Integer, String> avl = new AVLTree<>();
 
-        // Test 1: Insert nodes and check balance
-        System.out.println("Test 1: Insert and Check Balance");
+        // Test 1: Insert nodes and print tree
+        System.out.println("Test 1: Insert and Print Tree");
         avl.insert(10, "A");
         avl.insert(20, "B");
         avl.insert(30, "C"); // Should trigger a single left rotation
@@ -16,6 +16,16 @@ public class AVLTest {
         avl.insert(15, "E");
         avl.insert(25, "F");
         avl.insert(35, "G");
+        avl.insert(26, "H");
+        avl.insert(3, "I");
+        avl.insert(2, "Z");
+        avl.insert(1, "Y");
+        avl.insert(13, "Q");
+        avl.insert(14, "P");
+        avl.insert(11, "Q");
+        avl.insert(12, "Q");
+        avl.insert(27, "J");
+        avl.insert(38, "K");
         avl.printSideways();
 
         // Test 2: Check getKeys and getValues

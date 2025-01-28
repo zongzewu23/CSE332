@@ -68,21 +68,43 @@ public class AVLTree  <K extends Comparable<K>, V> extends BinarySearchTree<K,V>
         return (leftheight - rightheight > 1 || leftheight - rightheight < -1);
     }
     private TreeNode<K, V> rotate(TreeNode<K, V> subRoot){
-        int balanceFactor = getHeight(subRoot.left) - getHeight(subRoot.right);
-        if (balanceFactor > 1) {
+        int heightLeft = getHeight(subRoot.left);
+        int heightRight = getHeight(subRoot.right);
+        int bfRoot = heightLeft - heightRight;
+
+        int bfLeft = subRoot.left != null ?
+                getHeight(subRoot.left.left) - getHeight(subRoot.left.right) : -1;
+        int bfRight = subRoot.right != null ?
+                getHeight(subRoot.right.left) - getHeight(subRoot.right.right) : -1;
+
+        // Right
+        if (bfRoot > 1 && bfLeft > 0) {
             subRoot = rotateRight(subRoot);
-        } else if (balanceFactor < -1){
-            subRoot =rotateLeft(subRoot);
+        }
+
+        // Left Right
+        if (bfRoot > 1 && bfLeft < 0) {
+            subRoot = rotateLR(subRoot);
+        }
+
+        // Left
+        if (bfRoot < -1 && bfRight < 0) {
+            subRoot = rotateLeft(subRoot);
+        }
+
+        // Right Left
+        if (bfRoot < -1 && bfRight > 0) {
+            subRoot = rotateRL(subRoot);
         }
         return subRoot;
     }
 
     private TreeNode<K,V> rotateLeft(TreeNode<K,V> subRoot){
-        TreeNode<K,V> rl = subRoot.right.left;
         TreeNode<K,V> newRoot = subRoot.right;
+        TreeNode<K,V> rl = newRoot.left;
 
-        subRoot.right = rl;
         newRoot.left = subRoot;
+        subRoot.right = rl;
 
         subRoot.updateHeight();
         newRoot.updateHeight();
@@ -91,16 +113,25 @@ public class AVLTree  <K extends Comparable<K>, V> extends BinarySearchTree<K,V>
     }
 
     private TreeNode<K,V> rotateRight(TreeNode<K,V> subRoot){
-        TreeNode<K,V> lr = subRoot.left.right;
         TreeNode<K,V> newRoot = subRoot.left;
+        TreeNode<K,V> lr = newRoot.right;
 
-        subRoot.left = lr;
         newRoot.right = subRoot;
+        subRoot.left = lr;
 
         subRoot.updateHeight();
         newRoot.updateHeight();
 
         return newRoot;
+    }
+
+    private TreeNode<K, V> rotateLR(TreeNode<K,V> subRoot) {
+        subRoot.left = rotateLeft(subRoot.left);
+        return rotateRight(subRoot);
+    }
+    private TreeNode<K, V> rotateRL(TreeNode<K,V> subRoot) {
+        subRoot.right = rotateRight(subRoot.right);
+        return rotateLeft(subRoot);
     }
 }
 
