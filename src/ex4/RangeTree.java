@@ -2,34 +2,34 @@ package ex4;
 
 import java.util.List;
 
-public class RangeTree{
+public class RangeTree {
     private OrderedDeletelessDictionary<Double, Range> byStart;
     private OrderedDeletelessDictionary<Double, Range> byEnd;
     private int size;
 
-    public RangeTree(){
+    public RangeTree() {
         byStart = new AVLTree<>();
         byEnd = new AVLTree<>();
         size = 0;
     }
-    
-    public int size(){
+
+    public int size() {
         return size;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
     // Return the Range which starts at the given time
     // The running time is O(log n)
-    public Range findByStart(Double start){
+    public Range findByStart(Double start) {
         return byStart.find(start);
     }
 
     // Return the Range which ends at the given time
     // The running time is O(log n)
-    public Range findByEnd(Double end){
+    public Range findByEnd(Double end) {
         return byEnd.find(end);
     }
 
@@ -37,7 +37,7 @@ public class RangeTree{
     // Useful for testing and debugging.
     // The running time is O(n), so it should not
     // be used for implementing other methods.
-    public List<Range> getRanges(){
+    public List<Range> getRanges() {
         return byStart.getValues();
     }
 
@@ -45,7 +45,7 @@ public class RangeTree{
     // Useful for testing and debugging.
     // The running time is O(n), so it should not
     // be used for implementing other methods.
-    public List<Double> getStartTimes(){
+    public List<Double> getStartTimes() {
         return byStart.getKeys();
     }
 
@@ -53,7 +53,7 @@ public class RangeTree{
     // Useful for testing and debugging.
     // The running time is O(n), so it should not
     // be used for implementing other methods.
-    public List<Double> getEndTimes(){
+    public List<Double> getEndTimes() {
         return byEnd.getKeys();
     }
 
@@ -64,41 +64,42 @@ public class RangeTree{
     // The running time of this method should be O(log n)
     public boolean hasConflict(Range query) {
         // TODO
-        if (isEmpty()){
-//            System.out.println("case0---false");
+        if (isEmpty()) {
             return false;
         }
 
+        // obtain the current range's start and end
         Double queryStart = query.start;
         Double queryEnd = query.end;
 
+        // hard to explain this so:
+        /*
+         prevStart got by query end
+         ------------------|
+                        |__|
+                        |-------------------
+                           nextStart got by query start
+         */
         Double nextStart = byStart.findNextKey(queryStart);
-        Double prevEnd = byEnd.findPrevKey(queryEnd);
-
         Double prevStart = byStart.findPrevKey(queryEnd);
-        Double nextEnd = byEnd.findNextKey(queryStart);
 
-
-        if (nextStart == null && prevEnd == null) {
-//            System.out.println("caseX---true");
-            return true;
+        if (prevStart != null) {
+            Double prevEnd = findByStart(prevStart).end;
+            // it queryStart is smaller than previous end then it's a conflict
+            if (queryStart < prevEnd) {
+                return true;
+            }
         }
 
-        if (nextStart == null) {
-//            boolean compare = queryStart < prevEnd || nextEnd != null;
-//            System.out.println("case1---"+ compare);
-            return queryStart < prevEnd || nextEnd != null;
+        if (nextStart != null) {
+            // it's a conflict if query end is bigger than next start
+            if (queryEnd > nextStart) {
+                return true;
+            }
         }
 
-        if (prevEnd == null) {
-//            boolean compare = queryEnd > nextStart || prevStart != null;
-//            System.out.println("case2---"+ compare);
-            return queryEnd > nextStart || prevStart != null;
-        }
-
-//        boolean compare = queryStart < prevEnd || queryEnd > nextStart;
-//        System.out.println("case2---"+ compare);
-        return queryStart < prevEnd || queryEnd > nextStart;
+        // no conflict
+        return false;
     }
 
     // Inserts the given range into the data structure if it has no conflict.
@@ -107,12 +108,11 @@ public class RangeTree{
     // added to the data structure.
     // Running time should be O(log n)
     public boolean insert(Range query) {
-//        System.out.println("Inserting ..." + query.name);
-//        System.out.println("HASconflict returns:" +hasConflict(query));
         // TODO
         if (hasConflict(query)) {
             return false;
-        }else {
+        } else {
+            // insert query to the byStart and byEnd AVL tree
             byStart.insert(query.start, query);
             byEnd.insert(query.end, query);
             size++;
