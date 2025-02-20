@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39875aad-5e8f-42f3-8ccc-7c1ac5bda8b6" name="Changes" comment="No more bug for ex4, finally, finally.&#10;next time, check all the method you can use, do not be stubborn">
-      <change afterPath="$PROJECT_DIR$/src/ex5/ChainingHashTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex5/ChainingHashTableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex5/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex5/DeletelessDictionary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex5/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex5/Word.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex5/WordSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex5/bigSolution.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex5/bigWords.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex5/bigpuzzle.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex5/smallSolution.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex5/smallWords.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex5/smallpuzzle.txt" afterDir="false" />
+    <list default="true" id="39875aad-5e8f-42f3-8ccc-7c1ac5bda8b6" name="Changes" comment="finished EX5， relatively easy one">
+      <change afterPath="$PROJECT_DIR$/src/parallelism/ParallelSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parallelism/SumTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSE332.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CSE332.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,54 +52,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AVLTest.executor": "Run",
-    "Application.BSTTest.executor": "Run",
-    "Application.BenchMark.executor": "Run",
-    "Application.Client.executor": "Run",
-    "Application.GFG.executor": "Run",
-    "Application.TestBinaryMinHeap.executor": "Run",
-    "Application.ex2.Client.executor": "Run",
-    "Application.ex5.Client.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.ChainingHashTableTest.executor": "Run",
-    "JUnit.ChainingHashTableTest.testCustomHashCode.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/CSE332/CSE332/src/ex5",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AVLTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BSTTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BenchMark.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GFG.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ParallelSum.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SumTask.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestBinaryMinHeap.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ex2.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ex5.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ex7.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.ChainingHashTableTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChainingHashTableTest.testCustomHashCode.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/CSE332/CSE332/src/ex5&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\CSE332\CSE332\src\ex5" />
       <recent name="E:\CSE332\CSE332\src\ex0" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ex5.Client">
-    <configuration name="AVLTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ex4.AVLTest" />
+  <component name="RunManager" selected="Application.TestSecondSmallest">
+    <configuration name="TestCountStrs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="section.TestCountStrs" />
       <module name="CSE332" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ex4.*" />
+          <option name="PATTERN" value="section.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ex4.Client" />
+    <configuration name="TestLessThan7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="section.TestLessThan7" />
       <module name="CSE332" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ex4.*" />
+          <option name="PATTERN" value="section.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,12 +123,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ex5.Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ex5.Client" />
+    <configuration name="TestParity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="section.TestParity" />
       <module name="CSE332" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ex5.*" />
+          <option name="PATTERN" value="section.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,44 +136,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChainingHashTableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPowMod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="section.TestPowMod" />
       <module name="CSE332" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ex5.*" />
+          <option name="PATTERN" value="section.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ex5" />
-      <option name="MAIN_CLASS_NAME" value="ex5.ChainingHashTableTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChainingHashTableTest.testCustomHashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSecondSmallest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="section.TestSecondSmallest" />
       <module name="CSE332" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ex5.*" />
+          <option name="PATTERN" value="section.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ex5" />
-      <option name="MAIN_CLASS_NAME" value="ex5.ChainingHashTableTest" />
-      <option name="METHOD_NAME" value="testCustomHashCode" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ex5.Client" />
-        <item itemvalue="Application.Client" />
-        <item itemvalue="JUnit.ChainingHashTableTest.testCustomHashCode" />
-        <item itemvalue="JUnit.ChainingHashTableTest" />
-        <item itemvalue="Application.AVLTest" />
+        <item itemvalue="Application.TestSecondSmallest" />
+        <item itemvalue="Application.TestCountStrs" />
+        <item itemvalue="Application.TestLessThan7" />
+        <item itemvalue="Application.TestPowMod" />
+        <item itemvalue="Application.TestParity" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +222,11 @@
       <workItem from="1738111570059" duration="2790000" />
       <workItem from="1738709682455" duration="8042000" />
       <workItem from="1738721860532" duration="3555000" />
-      <workItem from="1738725739467" duration="2090000" />
+      <workItem from="1738725739467" duration="2257000" />
+      <workItem from="1739220051063" duration="488000" />
+      <workItem from="1739851928618" duration="5139000" />
+      <workItem from="1740035752120" duration="4314000" />
+      <workItem from="1740041301185" duration="185000" />
     </task>
     <task id="LOCAL-00001" summary="Two stacks and two queues are implemented.">
       <option name="closed" value="true" />
@@ -314,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738114257130</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="finished EX5， relatively easy one">
+      <option name="closed" value="true" />
+      <created>1738727883750</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1738727883750</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +353,8 @@
     <MESSAGE value="There were some bug in the last push, this time double rotate also implemented, I thought you don't necessarily to have double rotation if you do recursive insert, but founded out you do need double rotations" />
     <MESSAGE value="give upon rangeTree.hasConflict() today, give up. pray for tmr" />
     <MESSAGE value="No more bug for ex4, finally, finally.&#10;next time, check all the method you can use, do not be stubborn" />
-    <option name="LAST_COMMIT_MESSAGE" value="No more bug for ex4, finally, finally.&#10;next time, check all the method you can use, do not be stubborn" />
+    <MESSAGE value="finished EX5， relatively easy one" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished EX5， relatively easy one" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
